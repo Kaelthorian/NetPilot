@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 
 
 class DeviceCreate(BaseModel):
@@ -9,3 +9,5 @@ class DeviceCreate(BaseModel):
 
 class Device(DeviceCreate):
     id: int
+
+    model_config = ConfigDict(from_attributes=True)
