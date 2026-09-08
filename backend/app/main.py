@@ -1,4 +1,5 @@
 from fastapi import FastAPI
+from app.routers.devices import router as devices_router
 
 app = FastAPI(
     title="NetPilot API",
@@ -7,9 +8,14 @@ app = FastAPI(
 )
 
 
+app.include_router(devices_router)
+
+
 @app.get("/health")
 def health_check():
     return {
         "status": "ok",
         "service": "NetPilot API"
     }
+    
+    
