@@ -12,20 +12,3 @@ The frontend, developed with React, presents this information through a simple d
 The entire system runs using Docker Compose, separating the frontend, backend, and database into independent containers. The project also includes automated tests with Pytest and a CI/CD pipeline that validates the code and automatically builds the containers.
 
 The goal of NetPilot is not to replace an enterprise-grade Network Automation platform, but to directly demonstrate how software development, networking, automation, databases, testing, APIs, containers, and DevOps practices can be integrated into a small but functional solution.
-
-Local backend setup
-
-From PowerShell at the repository root:
-
-    py -m venv .venv
-    .\.venv\Scripts\Activate.ps1
-    python -m pip install -r backend\requirements.txt
-
-Run the API from the repository root with:
-
-    python -m uvicorn --app-dir backend app.main:app --reload
-
-Alternatively, run it from `backend`:
-
-    Set-Location backend
-    python -m uvicorn app.main:app --reload
